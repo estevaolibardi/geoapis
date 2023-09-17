@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+  width: 100%;
+  max-width: 1300px;
+}
+
+.container-content {
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 300px;
+}
+
+.container-content h1 {
+  color: #0079fa;
+  font-weight: 500;
+}
+
+.para {
+  color: black;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+:host {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}

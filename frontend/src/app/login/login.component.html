@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card">
+        <div class="card-header">
+          <h3>Faça o Login!</h3>
+        </div>
+        <div class="card-body">
+          <form class="form">
+            <div class="form-group">
+              <label class="form-group-label" for="">Email</label>
+              <input
+                [(ngModel)]="loginUserData.email"
+                name="email"
+                type="email"
+                class="form-group-input"
+                autocomplete="current-email"
+                placeholder="enter email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-group-label" for="">Password</label>
+              <input
+                [(ngModel)]="loginUserData.password"
+                name="password"
+                type="password"
+                class="form-group-input"
+                autocomplete="current-password"
+                placeholder="enter password"
+                required
+              />
+            </div>
+            <button (click)="loginUser()" class="btn" type="button">
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

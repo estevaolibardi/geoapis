@@ -1,0 +1,99 @@
+.navbar {
+  width: 100%;
+  color: white;
+  align-items: center;
+  font-size: 22px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1300px;
+}
+
+.pages {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+
+  cursor: pointer;
+
+  a:link {
+    text-decoration: none;
+  }
+}
+
+.container-links ul.pages li a {
+  text-decoration: none;
+}
+
+.navbar-toggler {
+  display: none;
+}
+
+.container-links {
+  display: flex;
+}
+
+.router {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.collapse {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+}
+
+.navbar-navo {
+  gap: 1rem;
+  display: flex;
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  background-color: #007bff;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-item a {
+  text-decoration: none;
+}
+
+.nav-item a:visited {
+  color: #fff;
+}
+
+.nav-item a:hover {
+  color: #333;
+}
+
+.navbar-a:visited {
+  color: #fff;
+}
+
+.navbar-a:hover {
+  color: #333;
+}
+
+.navbar-a {
+  text-decoration: none;
+}
+
+.navbar-login a:visited {
+  color: #fff;
+}
+
+.navbar-login a:hover {
+  color: #333;
+}
+
+.navbar-login a {
+  text-decoration: none;
+}
