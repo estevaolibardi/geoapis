@@ -57,6 +57,14 @@ app.post('/login', (req: Request, res: Response) => {
   res.json({ message: 'Authentication successful', token });
 });
 
+declare global {
+  namespace Express {
+    interface Request {
+      userId?: number;
+    }
+  }
+}
+
 function verifyToken(req: Request, res: Response, next: NextFunction) {
   if (!req.headers.authorization) {
     return res.status(401).send('Unauthorized request');
@@ -65,12 +73,26 @@ function verifyToken(req: Request, res: Response, next: NextFunction) {
   if (token === 'null') {
     return res.status(401).send('Unauthorized request');
   }
-  let payload = jwt.verify(token, secretKey);
-  if (!payload) {
+
+  try {
+    let payload = jwt.verify(token, secretKey);
+    if (!payload || typeof payload.sub !== 'number') {
+      return res.status(401).send('Unauthorized request');
+    }
+
+    const userId = payload.sub;
+
+    const user = users.find((u) => u.id === userId);
+
+    if (!user) {
+      return res.status(401).send('Unauthorized request');
+    }
+
+    req.userId = userId;
+    next();
+  } catch (error) {
     return res.status(401).send('Unauthorized request');
   }
-
-  next();
 }
 
 app.get('/private-page', verifyToken, (req: Request, res: Response) => {

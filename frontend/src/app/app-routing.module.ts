@@ -18,7 +18,7 @@ const routes: Routes = [
   {
     path: 'private-page',
     component: PrivatePageComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: 'login',
